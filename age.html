@@ -1,0 +1,50 @@
+<!Doctype Html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Age Calculator Application</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+		<style>
+			body{
+				margin-top: 100px;
+				background-color: aliceblue;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 offset-md-3">
+					<form>
+						<div class="form-group">
+							<input class="form-control form-control-md" type="number" name="number" id="number" placeholder="Type your age">
+							<center><button class="btn-primary btn-sm" type="button" id="button">Find Year</button></center>
+							<center><h5 id="year">Year</h5></center>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		
+				
+						
+		<script >
+			function calculate(){
+				var number = document.getElementById("number").value;
+				if(number == " " || number == 0){
+					window.alert("Please type your correct age!");
+					return;
+				}
+				var date = new Date().getFullYear();
+				var birthyear = number - date;
+				document.getElementById("year").style.display = "block";
+				document.getElementById("year").innerHTML="Your Birth Year is " + birthyear;
+			}
+			
+			document.getElementById("year").style.display = "none";
+			
+			document.getElementById("button").onclick = function() { calculate();};
+		</script>
+		
+	</body>
+</html>
